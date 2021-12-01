@@ -1,0 +1,47 @@
+{
+  "name": "pingleware-load-balancer",
+  "version": "1.0.0",
+  "description": "A load balance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "build-windows": "pkg -t node12-win index.js -o dist/pingleware-load-balancer.exe",
+    "build-linux": "pkg -t node12-linux index.js -o dist/pingleware-load-balancer_linux",
+    "build-macosx": "pkg -t node12-darwin index.js -o dist/pingleware-load-balancer_darwin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pingleware/pingleware-load-balancer.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "PressPage Entertainment Inc",
+    "email": "presspage.entertainment@gmail.com",
+    "url": "https://presspage.info"
+  },
+  "maintainers": [
+    {
+      "name": "PressPage Entertainment Inc DBA PINGLEWARE",
+      "email": "support@pingleware.work",
+      "url": "https://pingleware.work"
+    },
+    {
+      "name": "Patrick O. Ingle",
+      "email": "me@patrickingle.info",
+      "url": "https://patrickingle.info"
+    }
+  ],
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/pingleware/pingleware-load-balancer/issues"
+  },
+  "homepage": "https://github.com/pingleware/pingleware-load-balancer#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "config.json": "^0.0.4",
+    "express": "^4.17.1",
+    "http-proxy": "^1.18.1",
+    "request": "^2.81.0"
+  }
+}
