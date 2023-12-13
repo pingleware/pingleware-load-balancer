@@ -1,14 +1,27 @@
 {
   "name": "pingleware-load-balancer",
-  "version": "1.0.0",
-  "description": "A load balance",
+  "version": "1.1.0",
+  "description": "A lightweigth load balance",
   "main": "index.js",
+  "bin": "pingleware_load_balancer",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
-    "build-windows": "pkg -t node12-win index.js -o dist/pingleware-load-balancer.exe",
-    "build-linux": "pkg -t node12-linux index.js -o dist/pingleware-load-balancer_linux",
-    "build-macosx": "pkg -t node12-darwin index.js -o dist/pingleware-load-balancer_darwin"
+    "start:dev": "nodemon node .",
+    "build": "npm run build:win && npm run build:linux && npm run build:mac",
+    "build:win": "npm run build:win:arm64 && npm run build:win:x64",
+    "build:win:arm64": "pkg -t node14-win-arm64 index.js -o dist/pingleware-load-balancer_arm64.exe",
+    "build:win:x64": "pkg -t node14-win-x64 index.js -o dist/pingleware-load-balancer_x64.exe",
+    "build:linix": "npm run build:linux:arm64 && npm run build:linux:x64",
+    "build:linux:arm64": "pkg -t node14-linux-arm64 index.js -o dist/pingleware-load-balancer_linux_arm64",
+    "build:linux:x64": "pkg -t node14-linux-x64 index.js -o dist/pingleware-load-balancer_linux_x64",
+    "build:mac": "npm run build:mac:arm64 && npm run build:mac:x64",
+    "build:mac:arm64": "pkg -t node14-darwin-x64 index.js -o dist/pingleware-load-balancer_darwin_arm64",
+    "build:mac:x64": "pkg -t node14-darwin-x64 index.js -o dist/pingleware-load-balancer_darwin_x64",
+    "clean": "npm run clean:win && npm run clean:linux && npm run clean:mac",
+    "clean:win": "rm dist/pingleware-load-balancer*.exe",
+    "clean:linux": "rm dist/pingleware-load-balancer_linux*",
+    "clean:mac": "rm dist/pingleware-load-balancer_darwin*"
   },
   "repository": {
     "type": "git",
@@ -36,11 +49,14 @@
   "bugs": {
     "url": "https://github.com/pingleware/pingleware-load-balancer/issues"
   },
-  "homepage": "https://github.com/pingleware/pingleware-load-balancer#readme",
+  "homepage": "https://pingleware.support",
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.17.1",
+    "http": "^0.0.1-security",
     "http-proxy": "^1.18.1",
-    "request": "^2.81.0"
+    "querystring": "^0.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "pkg": "^5.8.1"
   }
 }
