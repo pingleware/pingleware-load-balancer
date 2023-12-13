@@ -12,7 +12,7 @@
     "build:win": "npm run build:win:arm64 && npm run build:win:x64",
     "build:win:arm64": "pkg -t node14-win-arm64 index.js -o dist/pingleware-load-balancer_arm64.exe",
     "build:win:x64": "pkg -t node14-win-x64 index.js -o dist/pingleware-load-balancer_x64.exe",
-    "build:linix": "npm run build:linux:arm64 && npm run build:linux:x64",
+    "build:linux": "npm run build:linux:arm64 && npm run build:linux:x64",
     "build:linux:arm64": "pkg -t node14-linux-arm64 index.js -o dist/pingleware-load-balancer_linux_arm64",
     "build:linux:x64": "pkg -t node14-linux-x64 index.js -o dist/pingleware-load-balancer_linux_x64",
     "build:mac": "npm run build:mac:arm64 && npm run build:mac:x64",
