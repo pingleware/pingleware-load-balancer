@@ -21,7 +21,7 @@ If not settings.json exists in the subdirectory of pingleware-loadbalance, then 
 
 then add your servers in JSON format in the servers array. as below.
 
-Pressing Save button will write a new settings.json file to the location specified. The .pingleware-loadbalancer directory is a system directory, to view system directories on Mac, press the SHIFT+COMMAND+PERIOD keys once to view all system directo4ries in Finder and a second time to hide system directories.
+Pressing Save button will write a new settings.json file to the location specified. The .pingleware-loadbalancer directory is a system directory, to view system directories on Mac, press the SHIFT+COMMAND+PERIOD keys once to view all system directories in Finder and a second time to hide system directories.
 
 The server will restart, enabling the proxy servers to handle requests.
 
