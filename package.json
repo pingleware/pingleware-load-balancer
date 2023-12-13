@@ -39,7 +39,6 @@
   "homepage": "https://github.com/pingleware/pingleware-load-balancer#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "config.json": "^0.0.4",
     "express": "^4.17.1",
     "http-proxy": "^1.18.1",
     "request": "^2.81.0"
